@@ -7,13 +7,22 @@
     src: url("../fonts/figtree-v8-latin/figtree-v8-latin-regular.woff2")
         format("woff2");
 }
-/* figtree-900 - latin */
+/* figtree-regular - latin */
 @font-face {
     font-display: swap;
     font-family: "Figtree";
     font-style: normal;
-    font-weight: 900;
-    src: url("../fonts/figtree-v8-latin/figtree-v8-latin-900.woff2")
+    font-weight: 400;
+    src: url("./assets/fonts/figtree-v8-latin/figtree-v8-latin-regular.woff2")
+        format("woff2");
+}
+/* figtree-800 - latin */
+@font-face {
+    font-display: swap;
+    font-family: "Figtree";
+    font-style: normal;
+    font-weight: 800;
+    src: url("./assets/fonts/figtree-v8-latin/figtree-v8-latin-800.woff2")
         format("woff2");
 }
 
