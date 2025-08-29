@@ -1,0 +1,173 @@
+/* figtree-regular - latin */
+@font-face {
+    font-display: swap;
+    font-family: "Figtree";
+    font-style: normal;
+    font-weight: 400;
+    src: url("../fonts/figtree-v8-latin/figtree-v8-latin-regular.woff2")
+        format("woff2");
+}
+/* figtree-900 - latin */
+@font-face {
+    font-display: swap;
+    font-family: "Figtree";
+    font-style: normal;
+    font-weight: 900;
+    src: url("../fonts/figtree-v8-latin/figtree-v8-latin-900.woff2")
+        format("woff2");
+}
+
+:root {
+    /* Colors */
+    --color__white: hsl(0, 0%, 100%);
+    --color__yellow: hsl(47, 88%, 63%);
+    --color__gray-950: #111111;
+    --color__gray-500: hsl(0, 0%, 42%);
+    --shadow: 0 8px 8px hsl(0, 0%, 0%);
+
+    /* Font Family */
+    --font-family__primary: "Figtree", sans-serif;
+
+    /* Font Sizes */
+    --font-size__title: clamp(
+        20px,
+        calc(20px + (4 * ((100vw - 375px) / 1065))),
+        24px
+    );
+    --font-size__body: clamp(
+        14px,
+        calc(14px + (2 * ((100vw - 375px) / 1065))),
+        16px
+    );
+
+    --font-size__regular: clamp(
+        12px,
+        calc(12px + (2 * ((100vw - 375px) / 1065))),
+        14px
+    );
+
+    --font-size__base: 14px;
+
+    /* Font weights */
+    --font-weight__regular: 500;
+    --font-weight__bold: 800;
+
+    /* Font line height */
+    --line__height__body: 1.5;
+}
+
+@layer typography {
+    h1 {
+        font-family: var(--font-family__primary);
+        font-size: var(--font-size__title);
+        font-weight: var(--font-weight__bold);
+        color: var(--color__gray-950);
+    }
+
+    p {
+        font-family: var(--font-family__primary);
+        font-size: var(--font-size__body);
+        font-weight: var(--font-weight__regular);
+        color: var(--color__gray-500);
+    }
+}
+
+@layer base {
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    main {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: var(--color__yellow);
+    }
+
+    img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+    }
+
+    body {
+        background-color: var(--color__gray-300);
+        font-family: var(--font-family__primary);
+        line-height: var(--line__height__body);
+    }
+
+    .container {
+        max-width: 336px;
+    }
+}
+
+@layer card {
+    .card {
+        display: grid;
+        gap: 24px;
+        max-width: 384px;
+        background-color: var(--color__white);
+        border: 1px solid var(--color__gray-950);
+        border-radius: 24px;
+        box-shadow: var(--shadow);
+        padding: 24px;
+    }
+
+    .card__image--container {
+        margin: 0 auto;
+    }
+
+    .card__image--container img {
+        border-radius: 10px;
+    }
+
+    .card__content {
+        display: grid;
+        gap: 12px;
+    }
+
+    .card__label {
+        display: inline-block;
+        color: var(--color__gray-950);
+        width: fit-content;
+        font-size: var(--font-size__regular);
+        font-weight: var(--font-weight__bold);
+        border-radius: 4px;
+        background-color: var(--color__yellow);
+        padding: 4px 12px;
+    }
+
+    .card__published-info {
+        font-size: var(--font-size__regular);
+    }
+
+    .card__title {
+        transition: 0.3s ease;
+    }
+
+    .card__title:hover {
+        color: var(--color__yellow);
+        cursor: pointer;
+    }
+
+    .card__author--container {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .card__author--name {
+        font-size: var(--font-size__base);
+        font-weight: var(--font-weight__bold);
+        color: var(--color__gray-950);
+    }
+}
